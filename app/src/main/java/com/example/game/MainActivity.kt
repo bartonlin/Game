@@ -58,11 +58,16 @@ class MainActivity : AppCompatActivity() {
 
             flag = true
             (show_answer as Button).text = "隱藏月月"
+            val context = applicationContext
+            val text = "找到月月了"
+            val duration = Toast.LENGTH_SHORT
+            val toast = Toast.makeText(context, text, duration)
+            toast.show()
         }
 
         show_answer?.setOnClickListener {
             if (flag == false) {
-                (btn_submit as ImageButton).setImageResource(R.drawable.test)
+                (btn_submit as ImageButton).setImageResource(R.drawable.ans)
                 (show_answer as Button).text = "隱藏月月"
                 flag = true
             } else {
@@ -96,11 +101,6 @@ class MainActivity : AppCompatActivity() {
                     distance = sqrt(
                         (x - img_x!! - (50 * displayMetrics.density).roundToInt()).toDouble().pow(2) + (y - img_y!! - 250 - (50 * displayMetrics.density).roundToInt()).toDouble().pow(2)
                     )
-                    val context = applicationContext
-                    val text = "Touch : $x, $y  IMG：$img_x, $img_y Distance: $distance"
-                    val duration = Toast.LENGTH_SHORT
-                    val toast = Toast.makeText(context, text, duration)
-                    toast.show()
 
                     var virsec = 10
                     if (distance > 500) virsec = 100
