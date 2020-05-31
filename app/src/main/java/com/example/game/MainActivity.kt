@@ -55,9 +55,8 @@ class MainActivity : AppCompatActivity() {
 
         btn_submit?.setOnClickListener {
             (btn_submit as ImageButton).setImageResource(R.drawable.test)
+            (show_answer as Button).isEnabled = false
 
-            flag = true
-            (show_answer as Button).text = "隱藏月月"
             val context = applicationContext
             val text = "找到月月了"
             val duration = Toast.LENGTH_SHORT
@@ -78,6 +77,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         new_game?.setOnClickListener {
+            (show_answer as Button).isEnabled = true
             img_x = Random.nextInt(displayMetrics.widthPixels / 2)
             img_y = Random.nextInt(displayMetrics.heightPixels / 2)
 
